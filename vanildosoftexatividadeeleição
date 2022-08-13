@@ -1,0 +1,73 @@
+Algoritmo "eleição"
+
+Var
+candidatox, candidatoy, candidatoz, branco: inteiro
+nreleitor: inteiro
+votar: caracter
+numerocandidato: inteiro
+Inicio
+     nreleitor <- 1
+
+repita
+
+      escreval("********URNA ELETRONICA**********")
+      escreval()
+      escreval("Eleitor nr. ", nreleitor )
+      escreval()
+      escreval("lista de candidatos:")
+      escreval()
+      escreval("Candidato X - (889)")
+      escreval("Candidato Y - (847)")
+      escreval("Candidato Z - (515)")
+      escreval("Votar branco - (0)")
+      escreval("Escolha o número do candidato:")
+      leia(numerocandidato)
+      escolha numerocandidato
+      caso 899
+        candidatox <- candidatox + 1
+      caso 847
+        candidatoy <- candidatoy + 1
+      caso 515
+        candidatoz <- candidatoz + 1
+      caso 0
+        branco <- branco + 1
+
+     
+      fimescolha
+
+
+     escreval("Votar novamente - [sim OU nao] ?")
+     leia(votar)
+     se (votar <> "nao") entao
+      nreleitor <- nreleitor + 1
+      fimse
+
+     limpatela
+
+até((votar = "nao"))
+
+escreval("Apuração dos votos:")
+escreval()
+escreval("Número de eleitores:", nreleitor)
+escreval()
+escreval("Candidato X :", candidatox)
+escreval("Candidato Y :", candidatoy)
+escreval("Candidato Z :", candidatoz)
+escreval("Votos em branco: ", branco)
+escreval()
+
+se ((candidatox > candidatoy) e (candidatox > candidatoz)) entao
+escreval("O candidato X foi o vencedor!")
+senao
+se ((candidatoy > candidatox) e (candidatoy > candidatoz)) entao
+escreval("O candidato Y foi o vencedor!")
+senao
+se ((candidatoz > candidatox) e (candidatoz > candidatoy)) entao
+escreval("O candidato Z foi o vencedor!")
+
+fimse
+fimse
+fimse
+
+
+Fimalgoritmo
